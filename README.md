@@ -1,30 +1,33 @@
-# React + TypeScript + Vite
+# TUM Privacy Club - Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the official landing page for TUM Privacy Club, a student organization dedicated to promoting digital privacy awareness and education at the Technical University of Munich.
 
-Currently, two official plugins are available:
+Built with React + TypeScript + Vite for optimal performance and developer experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## About TUM Privacy Club
 
-## Expanding the ESLint configuration
+We are a student-led initiative focused on:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Educating students about digital privacy and security
+- Organizing workshops and talks on privacy-related topics
+- Advocating for better privacy practices in academic and personal contexts
+- Building a community of privacy-conscious individuals
 
-- Configure the top-level `parserOptions` property like this:
+## Development
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+This project uses modern web technologies:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **React** for the user interface
+- **TypeScript** for type safety
+- **Vite** for fast development and building
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start development server: `npm run dev`
+4. Build for production: `npm run build`
+
+## Contributing
+
+We welcome contributions from fellow students and privacy advocates. Please check our contribution guidelines before submitting pull requests.

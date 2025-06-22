@@ -254,7 +254,7 @@ function Home() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-blue-600" />
-                  <span className="text-gray-700">privacy-club@tum.de</span>
+                  <span className="text-gray-700"> hello@tumpriv.club</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-5 h-5 text-blue-600" />
@@ -313,6 +313,72 @@ function Home() {
           <h2 className="text-3xl font-bold text-center mb-12 text-blue-900">
             Impressum
           </h2>
+          <div className="max-w-4xl mx-auto prose prose-blue">
+            <div className="text-gray-700 space-y-6">
+              <p>
+                <strong>Angaben gemäß § 5 TMG:</strong>
+              </p>
+
+              <p>
+                <strong>
+                  Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV /
+                  Ansprechpartner:
+                </strong>
+              </p>
+              <div className="pl-4">
+                <p>Tobias Maringgele</p>
+                <p>E-Mail: tmaringgele@outlook.at</p>
+                <p>Telefon: +43 677 62926015</p>
+                <p>Elektrastraße 11</p>
+                <p>81925 München</p>
+                <p>Deutschland</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold text-blue-900 mb-3">
+                  Haftung für Inhalte
+                </h3>
+                <p className="mb-4">
+                  Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene
+                  Inhalte auf diesen Seiten nach den allgemeinen Gesetzen
+                  verantwortlich. Nach §§ 8 bis 10 TMG sind wir jedoch nicht
+                  verpflichtet, übermittelte oder gespeicherte fremde
+                  Informationen zu überwachen oder nach Umständen zu forschen,
+                  die auf eine rechtswidrige Tätigkeit hinweisen.
+                </p>
+                <p>
+                  Verpflichtungen zur Entfernung oder Sperrung der Nutzung von
+                  Informationen nach den allgemeinen Gesetzen bleiben hiervon
+                  unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem
+                  Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung
+                  möglich. Bei Bekanntwerden von entsprechenden
+                  Rechtsverletzungen werden wir diese Inhalte umgehend
+                  entfernen.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold text-blue-900 mb-3">
+                  Haftung für Links
+                </h3>
+                <p className="mb-4">
+                  Unser Angebot enthält Links zu externen Webseiten Dritter, auf
+                  deren Inhalte wir keinen Einfluss haben. Deshalb können wir
+                  für diese fremden Inhalte auch keine Gewähr übernehmen. Für
+                  die Inhalte der verlinkten Seiten ist stets der jeweilige
+                  Anbieter oder Betreiber der Seiten verantwortlich.
+                  Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht
+                  erkennbar.
+                </p>
+                <p>
+                  Eine permanente inhaltliche Kontrolle der verlinkten Seiten
+                  ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung
+                  nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen
+                  werden wir derartige Links umgehend entfernen.
+                </p>
+              </div>
+            </div>
+          </div>
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
             <div></div>
             <div></div>

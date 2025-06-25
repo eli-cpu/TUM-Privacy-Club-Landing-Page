@@ -243,65 +243,39 @@ function Home() {
       {/* Contact Section */}
       <section id="contact" className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-blue-900">
+          <h2 className="text-3xl font-bold text-center mb-4 text-blue-900">
             Get In Touch
           </h2>
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-xl font-semibold mb-6 text-blue-900">
-                Contact Information
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-blue-600" />
-                  <span className="text-gray-700"> hello@tumpriv.club</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <MapPin className="w-5 h-5 text-blue-600" />
-                  <span className="text-gray-700">
-                    Technical University of Munich
-                  </span>
-                </div>
+          <h3 className="text-xl font-semibold mb-8 text-blue-900 text-center">
+            Contact Information
+          </h3>
+          <div className="flex flex-col items-center w-full mx-auto max-w-2xl">
+            <div className="space-y-4 w-full">
+              <div className="flex items-center space-x-3 justify-center">
+                <Mail className="w-5 h-5 text-blue-600" />
+                <span className="text-gray-700"> hello@tumpriv.club</span>
               </div>
-              <div className="mt-8">
-                <h4 className="font-semibold mb-4 text-blue-900">
-                  Join Our Mailing List
-                </h4>
-                <div className="flex space-x-2">
-                  <Input
-                    type="email"
-                    placeholder="your.email@tum.de"
-                    className="border-blue-200 focus:border-blue-500"
-                  />
-                  <Button className="bg-blue-600 hover:bg-blue-700">
-                    Subscribe
-                  </Button>
-                </div>
+              <div className="flex items-center space-x-3 justify-center">
+                <MapPin className="w-5 h-5 text-blue-600" />
+                <span className="text-gray-700">
+                  Technical University of Munich
+                </span>
               </div>
             </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-6 text-blue-900">
-                Send us a Message
-              </h3>
-              <form className="space-y-4">
-                <Input
-                  placeholder="Your Name"
-                  className="border-blue-200 focus:border-blue-500"
-                />
+            <div className="mt-8 w-full">
+              <h4 className="font-semibold mb-4 text-blue-900 text-center">
+                Join Our Mailing List
+              </h4>
+              <div className="flex space-x-2 justify-center">
                 <Input
                   type="email"
-                  placeholder="Your Email"
+                  placeholder="your.email@tum.de"
                   className="border-blue-200 focus:border-blue-500"
                 />
-                <Textarea
-                  placeholder="Your Message"
-                  rows={4}
-                  className="border-blue-200 focus:border-blue-500"
-                />
-                <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                  Send Message
+                <Button className="bg-blue-600 hover:bg-blue-700">
+                  Subscribe
                 </Button>
-              </form>
+              </div>
             </div>
           </div>
         </div>

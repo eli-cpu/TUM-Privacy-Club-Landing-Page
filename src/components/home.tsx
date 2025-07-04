@@ -261,6 +261,11 @@ function Home() {
                   Technical University of Munich
                 </span>
               </div>
+              <div className="flex items-center space-x-3 justify-center">
+                <span className="text-gray-700">
+                  https://matrix.to/#/#tumprivacyclub:tum.de
+                </span>
+              </div>
             </div>
             <div className="mt-8 w-full">
               <h4 className="font-semibold mb-4 text-blue-900 text-center">

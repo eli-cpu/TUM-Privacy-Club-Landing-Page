@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Calendar, Users, BookOpen, Mail, Phone, MapPin } from "lucide-react";
+import { Calendar, Users, BookOpen, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import logoImage from "/public/images/logo.png";
 
 function Home() {
@@ -256,6 +256,10 @@ function Home() {
                 <span className="text-gray-700"> hello@tumpriv.club</span>
               </div>
               <div className="flex items-center space-x-3 justify-center">
+                <MessageCircle className="w-5 h-5 text-blue-600" />
+                <span className="text-gray-700"><a href="https://matrix.to/#/#tumprivacyclub:tum.de">Matrix Community Space</a></span>
+              </div>
+              <div className="flex items-center space-x-3 justify-center">
                 <MapPin className="w-5 h-5 text-blue-600" />
                 <span className="text-gray-700">
                   Technical University of Munich
@@ -367,7 +371,7 @@ function Home() {
             <img
               src={logoImage}
               alt="TUM Privacy Club Logo"
-              className="w-6 h-6"
+              className="w-12 h-12"
             />
             <span className="text-lg font-semibold">TUM Privacy Club</span>
           </div>

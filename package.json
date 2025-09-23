@@ -17,6 +17,9 @@
   "scripts": {
     "dev:backend": "node backend/server.js",
     "dev": "npm run dev:backend",
+    "build:frontend": "cd frontend && npm install && npm run build",
+    "render-build": "npm install && npm run build:frontend",
+    "start": "node backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

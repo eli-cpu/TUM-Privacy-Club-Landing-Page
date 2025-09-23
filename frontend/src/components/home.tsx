@@ -13,9 +13,11 @@ import logoImage from "/public/logo.svg";
 import React, { useEffect, useState } from "react";
 
 function Home() {
-  // API Basis (Environment-Override möglich: VITE_API_BASE)
-  const API_BASE =
-    (import.meta as any)?.env?.VITE_API_BASE || "http://localhost:5000";
+  // API Basis: Production nutzt relative Pfade, lokal kann VITE_API_BASE gesetzt werden
+  const rawBase = (import.meta as any)?.env?.VITE_API_BASE || "";
+  const API_BASE = rawBase.replace(/\/$/, ""); // trailing slash entfernen
+  // Helper zum Bauen von URLs
+  const apiUrl = (p: string) => `${API_BASE}${p}`;
   // Backend Anbindung: Events (Liste) + Newsletter
   const [events, setEvents] = useState<any[]>([]);
   const [eventLoading, setEventLoading] = useState(true);
@@ -27,8 +29,11 @@ function Home() {
   const [subMessage, setSubMessage] = useState("");
 
   useEffect(() => {
-    fetch(`${API_BASE}/api/events`)
-      .then((r) => r.json())
+    fetch(apiUrl("/api/events"))
+      .then((r) => {
+        if (!r.ok) throw new Error(String(r.status));
+        return r.json();
+      })
       .then((d) => {
         const list = Array.isArray(d.events)
           ? d.events
@@ -37,7 +42,10 @@ function Home() {
           : [];
         setEvents(list);
       })
-      .catch(() => setEventError("Events konnten nicht geladen werden."))
+      .catch((err) => {
+        console.error("Events fetch failed", err);
+        setEventError("Events konnten nicht geladen werden.");
+      })
       .finally(() => setEventLoading(false));
   }, [API_BASE]);
 
@@ -47,7 +55,7 @@ function Home() {
     setSubStatus("loading");
     setSubMessage("");
     try {
-      const res = await fetch(`${API_BASE}/api/email`, {
+      const res = await fetch(apiUrl("/api/email"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -67,7 +75,8 @@ function Home() {
         setSubStatus("error");
         setSubMessage("Unbekannte Antwort.");
       }
-    } catch {
+    } catch (err) {
+      console.error("Subscribe failed", err);
       setSubStatus("error");
       setSubMessage("Netzwerkfehler.");
     }

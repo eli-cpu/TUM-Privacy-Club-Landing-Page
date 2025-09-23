@@ -1,0 +1,29 @@
+{
+  "name": "static-website",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/eli-cpu/TUM-Privacy-Club-Landing-Page#readme",
+  "bugs": {
+    "url": "https://github.com/eli-cpu/TUM-Privacy-Club-Landing-Page/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eli-cpu/TUM-Privacy-Club-Landing-Page.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev:backend": "node backend/server.js",
+    "dev": "npm run dev:backend",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "mongoose": "^8.5.1",
+    "path": "^0.12.7"
+  }
+}

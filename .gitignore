@@ -1,0 +1,84 @@
+# ---- Node & Package Manager ----
+node_modules/
+.pnpm-store/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# ---- Build / Output ----
+dist/
+build/
+.out/
+.next/
+.vite/
+coverage/
+.tmp/
+cache/
+.cache/
+parcel-cache/
+
+# ---- Logs & Debug ----
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---- Environment / Secrets ----
+.env
+.env.*
+!/.env.example
+
+# ---- DB / Runtime Data ----
+*.sqlite
+*.db
+*.pid
+pids/
+
+# ---- IDE / Editor ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# ---- Typescript / Build Meta ----
+*.tsbuildinfo
+
+# ---- Test / Coverage Tools ----
+.nyc_output/
+
+# ---- Temporary / Misc ----
+*.swp
+*.swo
+*.orig
+*.rej
+*.cache
+*.tgz
+
+# ---- Uploads (falls genutzt) ----
+uploads/
+
+# ---- Frontend Specific ----
+.eslintcache
+stylelintcache
+
+# ---- Svelte / Vue / React Artifacts ----
+*.sass-cache
+
+# ---- Local Scripts ----
+scripts/local/
+
+# ---- OS Metadata ----
+._*
+.fseventsd
+.Spotlight-V100
+.Trashes
+
+# ---- Lock for Storybook / Playwright etc. (optional) ----
+.storybook-out/
+playwright-report/
+
+# ---- End of file ----

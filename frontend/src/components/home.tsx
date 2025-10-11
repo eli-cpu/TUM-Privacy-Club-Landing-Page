@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -6,39 +5,27 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Calendar, Users, BookOpen, Mail, Phone, MapPin } from "lucide-react";
+import { Calendar, Users, BookOpen, Mail, MapPin } from "lucide-react";
 import logoImage from "/public/logo.svg";
 import React, { useEffect, useState } from "react";
 
 function Home() {
-  // API Basis: Production nutzt relative Pfade, lokal kann VITE_API_BASE gesetzt werden
-  const rawBase = (import.meta as any)?.env?.VITE_API_BASE || "";
-  const API_BASE = rawBase.replace(/\/$/, ""); // trailing slash entfernen
-  // Helper zum Bauen von URLs
-  const apiUrl = (p: string) => `${API_BASE}${p}`;
-  // Backend Anbindung: Events (Liste) + Newsletter
+  // Events aus statischer JSON-Datei (kein Backend erforderlich)
   const [events, setEvents] = useState<any[]>([]);
   const [eventLoading, setEventLoading] = useState(true);
   const [eventError, setEventError] = useState<string | null>(null);
-  const [email, setEmail] = useState("");
-  const [subStatus, setSubStatus] = useState<
-    "idle" | "loading" | "ok" | "exists" | "error"
-  >("idle");
-  const [subMessage, setSubMessage] = useState("");
 
   useEffect(() => {
-    fetch(apiUrl("/api/events"))
+    fetch("/events.json")
       .then((r) => {
         if (!r.ok) throw new Error(String(r.status));
         return r.json();
       })
       .then((d) => {
-        const list = Array.isArray(d.events)
+        const list = Array.isArray(d?.events)
           ? d.events
-          : d.event
-          ? [d.event]
+          : Array.isArray(d)
+          ? d
           : [];
         setEvents(list);
       })
@@ -47,40 +34,7 @@ function Home() {
         setEventError("Events konnten nicht geladen werden.");
       })
       .finally(() => setEventLoading(false));
-  }, [API_BASE]);
-
-  async function handleSubscribe(e: React.FormEvent) {
-    e.preventDefault();
-    if (!email.trim()) return;
-    setSubStatus("loading");
-    setSubMessage("");
-    try {
-      const res = await fetch(apiUrl("/api/email"), {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
-      if (res.status === 201) {
-        setSubStatus("ok");
-        setSubMessage("Erfolgreich eingetragen.");
-        setEmail("");
-      } else if (data.message === "Bereits vorhanden") {
-        setSubStatus("exists");
-        setSubMessage("E-Mail bereits vorhanden.");
-      } else if (data.error) {
-        setSubStatus("error");
-        setSubMessage(data.error);
-      } else {
-        setSubStatus("error");
-        setSubMessage("Unbekannte Antwort.");
-      }
-    } catch (err) {
-      console.error("Subscribe failed", err);
-      setSubStatus("error");
-      setSubMessage("Netzwerkfehler.");
-    }
-  }
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -409,47 +363,6 @@ function Home() {
                   https://matrix.to/#/#tumprivacyclub:tum.de
                 </span>
               </div>
-              {/* Newsletter Formular */}
-              <form
-                onSubmit={handleSubscribe}
-                className="pt-6 mt-6 border-t border-gray-200"
-              >
-                <h4 className="text-center font-semibold text-blue-900 mb-3">
-                  Datenschutz-News & Events abonnieren
-                </h4>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <input
-                    type="email"
-                    required
-                    placeholder="deine.email@tum.de"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full sm:w-72 rounded-md border border-blue-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition"
-                  />
-                  <Button
-                    type="submit"
-                    disabled={subStatus === "loading"}
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-6"
-                  >
-                    {subStatus === "loading" ? "Sende…" : "Eintragen"}
-                  </Button>
-                </div>
-                {subMessage && (
-                  <p
-                    className={`mt-2 text-center text-sm ${
-                      subStatus === "ok"
-                        ? "text-green-600"
-                        : subStatus === "exists"
-                        ? "text-blue-600"
-                        : subStatus === "error"
-                        ? "text-red-600"
-                        : "text-gray-600"
-                    }`}
-                  >
-                    {subMessage}
-                  </p>
-                )}
-              </form>
             </div>
           </div>
         </div>

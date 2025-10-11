@@ -1,0 +1,12 @@
+{
+  "events": [
+    {
+      "id": "evt_1",
+      "title": "DSGVO 101: Vortrag vom Datenschutzbeauftragten der TUM",
+      "date": "2025-09-26",
+      "time": "19:00 Uhr",
+      "location": "am Campus",
+      "description": "Vortrag über die Auswirkungen, Vor- und Nachteile der DSGVO für Studierende und wie man seine Datenschutzrechte wahrnimmt."
+    }
+  ]
+}

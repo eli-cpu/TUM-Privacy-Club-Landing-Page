@@ -350,7 +350,7 @@ function Home() {
             <div className="space-y-4 w-full">
               <div className="flex items-center space-x-3 justify-center">
                 <Mail className="w-5 h-5 text-blue-600" />
-                <span className="text-gray-700"> hello@tumpriv.club</span>
+                <span className="text-gray-700"> hello@tumprivacy.club</span>
               </div>
               <div className="flex items-center space-x-3 justify-center">
                 <MapPin className="w-5 h-5 text-blue-600" />

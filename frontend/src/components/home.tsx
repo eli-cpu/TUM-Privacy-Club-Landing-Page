@@ -257,23 +257,23 @@ function Home() {
                   </li>
                   <li>
                     <a
-                      href="https://nordvpn.com/"
+                      href="https://protonvpn.com/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-700 hover:text-blue-900 underline decoration-blue-300 hover:decoration-blue-500 underline-offset-2"
                     >
-                      NordVPN
+                      Proton VPN
                     </a>{" "}
                     – Sichere VPN-Verbindung
                   </li>
                   <li>
                     <a
-                      href="https://ublockorigin.com/"
+                      href="https://adblockplus.org/de/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-700 hover:text-blue-900 underline decoration-blue-300 hover:decoration-blue-500 underline-offset-2"
                     >
-                      uBlock Origin
+                      AdblockPlus
                     </a>{" "}
                     – Tracker- & Werbeblocker
                   </li>
@@ -321,14 +321,14 @@ function Home() {
                   </li>
                   <li>
                     <a
-                      href="https://www.tagesschau.de/thema/dsgvo"
+                      href="https://dsgvo-gesetz.de/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-700 hover:text-blue-900 underline decoration-blue-300 hover:decoration-blue-500 underline-offset-2"
                     >
                       DSGVO
                     </a>{" "}
-                    – Nachrichten & Entwicklungen
+                    – Link zum Gesetz
                   </li>
                 </ul>
               </CardContent>

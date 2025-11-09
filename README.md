@@ -30,4 +30,4 @@ This project uses modern web technologies:
 
 ## Contributing
 
-We welcome contributions from fellow students and privacy advocates. Please check our contribution guidelines before submitting pull requests.
+We welcome contributions from fellow students and privacy advocates.
